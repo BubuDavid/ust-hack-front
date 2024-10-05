@@ -32,12 +32,14 @@ export function Navbar() {
               <NavbarLink name="Projects" link="/projects" />
             </li>
 
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+            <div className="hidden md:block">
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </div>
           </ul>
         </div>
       </div>
