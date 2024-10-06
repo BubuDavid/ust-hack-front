@@ -6,14 +6,12 @@ export default async function ProjectsPage() {
 
   return (
     <div>
-      {projects.map((project) =>
-        project.IsProject ? (
-          <ProjectCard
-            key={project.projectId}
-            projectId={project.partitionKey}
-          />
-        ) : null,
-      )}
+      {projects.map((project, key) => {
+        if (project.IsProject) {
+          return <ProjectCard key={key} projectId={project.partitionKey} />
+        }
+        return null
+      })}
     </div>
   )
 }
